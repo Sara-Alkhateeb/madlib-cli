@@ -17,7 +17,7 @@ if input_str == 'y':
     # adjective1 = input("Give us an adjective: ")
     # adjective2 = input("Give us another adjective: ")
     # name = input("Give us your name: ")
-    file_path =("assets/vedio_game.txt")
+    file_path =("assets/video_game.txt")
     def read_template(file_path):
         with open (file_path , 'r') as file:
             content = file.read()
@@ -59,7 +59,7 @@ if input_str == 'y':
         file.write(story)
 
     print(' Game is done :) ')
-    print("Goodbye!")
+    print("   Goodbye!   ")
 
 elif input_str == 'n':
     print("Goodbye!")
