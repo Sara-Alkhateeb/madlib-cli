@@ -14,10 +14,10 @@ Have fun playing Madlibs!''')
 input_str = input("Do you want to play Madlibs? (y/n): ")
 
 if input_str == 'y':
-    adjective1 = input("Give us an adjective: ")
-    adjective2 = input("Give us another adjective: ")
-    name = input("Give us your name: ")
-    file_path =("assets/dark_and_stormy_night_template.txt")
+    # adjective1 = input("Give us an adjective: ")
+    # adjective2 = input("Give us another adjective: ")
+    # name = input("Give us your name: ")
+    file_path =("assets/video_game.txt")
     def read_template(file_path):
         with open (file_path , 'r') as file:
             content = file.read()
@@ -45,12 +45,21 @@ if input_str == 'y':
 
     template_txt = read_template(file_path)
     stripped, parts = parse_template(template_txt)
-    words = (adjective1, adjective2, name)
 
+    words = []
+    for elment in parts:
+        user_input = input(f" write {elment} here : ")
+        words.append(user_input)
+    
     story = merge(stripped, words)
 
     print(story)
-    print('Game is done!')
+
+    with open('madlib_cli/madlib_story.txt', 'w') as file:
+        file.write(story)
+
+    print(' Game is done :) ')
+    print("   Goodbye!   ")
 
 elif input_str == 'n':
     print("Goodbye!")
